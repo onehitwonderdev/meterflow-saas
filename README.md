@@ -18,8 +18,8 @@ graph TB
     end
 
     subgraph Edge["Next.js 15 App Router (Vercel Edge/Node)"]
-        Ingest[1. Ingestion & Gatekeeper<br/>- SHA-256 Key Verification<br/>- Upstash Redis Lua Script<br/>- Idempotency Deduplication<br/>- Real-Time Quota Enforcement]
-        Dashboard[2. SaaS Dashboard & Control Plane<br/>- Multi-Tenant RBAC (Better-Auth)<br/>- Interactive Traffic Simulator<br/>- Real-Time Usage & Revenue Charts<br/>- AI FinOps Copilot (Gemini 2.5)]
+        Ingest["1. Ingestion & Gatekeeper<br/>- SHA-256 Key Verification<br/>- Upstash Redis Lua Script<br/>- Idempotency Deduplication<br/>- Real-Time Quota Enforcement"]
+        Dashboard[2. SaaS Dashboard & Control Plane<br/>- Multi-Tenant RBAC Better-Auth<br/>- Interactive Traffic Simulator<br/>- Real-Time Usage & Revenue Charts<br/>- AI FinOps Copilot Gemini 2.5]
     end
 
     subgraph Cache["Upstash Redis (Free Tier)"]
