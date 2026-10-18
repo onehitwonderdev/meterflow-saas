@@ -13,28 +13,28 @@
 
 ```mermaid
 graph TB
-    subgraph Client["Client / Customer Infrastructure"]
+    subgraph Client["Client Infrastructure"]
         SDK[Customer Backend SDK / cURL]
     end
 
     subgraph Edge["Next.js 15 App Router (Vercel Edge/Node)"]
         Ingest["1. Ingestion & Gatekeeper<br/>- SHA-256 Key Verification<br/>- Upstash Redis Lua Script<br/>- Idempotency Deduplication<br/>- Real-Time Quota Enforcement"]
-        Dashboard[2. SaaS Dashboard & Control Plane<br/>- Multi-Tenant RBAC Better-Auth<br/>- Interactive Traffic Simulator<br/>- Real-Time Usage & Revenue Charts<br/>- AI FinOps Copilot Gemini 2.5]
+        Dashboard["2. SaaS Dashboard & Control Plane<br/>- Multi-Tenant RBAC Better-Auth<br/>- Interactive Traffic Simulator<br/>- Real-Time Usage & Revenue Charts<br/>- AI FinOps Copilot Gemini 2.5"]
     end
 
     subgraph Cache["Upstash Redis (Free Tier)"]
-        Redis[(Idempotency Keys: 24h TTL<br/>Live Spend Counters<br/>Sliding Window Rate Limiters<br/>Cached API Key Metadata)]
+        Redis["Idempotency Keys: 24h TTL<br/>Live Spend Counters<br/>Sliding Window Rate Limiters<br/>Cached API Key Metadata"]
     end
 
     subgraph DB["Neon Serverless PostgreSQL"]
-        Postgres[(Tenants, Users, RBAC, Audit Logs<br/>Customers, Plans, Pricing Tiers<br/>Raw Usage Events (Partitioned)<br/>Hourly Rollups, Invoices, Line Items)]
+        Postgres["Tenants, Users, RBAC, Audit Logs<br/>Customers, Plans, Pricing Tiers<br/>Raw Usage Events Partitioned<br/>Hourly Rollups, Invoices, Line Items"]
     end
 
     subgraph Workers["Inngest Serverless Queue"]
-        WorkerA[Worker A: Batch Persistence & Rollups]
-        WorkerB[Worker B: Rating Engine & Invoices]
-        WorkerC[Worker C: Webhook Dispatcher + Backoff]
-        WorkerD[Worker D: Stripe Sync & Anomaly Scan]
+        WorkerA["Worker A: Batch Persistence & Rollups"]
+        WorkerB["Worker B: Rating Engine & Invoices"]
+        WorkerC["Worker C: Webhook Dispatcher + Backoff"]
+        WorkerD["Worker D: Stripe Sync & Anomaly Scan"]
     end
 
     SDK -->|POST /api/v1/events| Ingest
