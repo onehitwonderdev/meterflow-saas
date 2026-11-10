@@ -31,4 +31,9 @@ out/
 
 # Binary
 .DS_Store
+
+# AI Assistant & Tool Outputs
+.claude/
+CLAUDE.md
+graphify-out/
 ```
