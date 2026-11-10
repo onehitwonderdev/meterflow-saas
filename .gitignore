@@ -8,6 +8,7 @@ logs
 # Dependency directories
 node_modules/
 .vitest/
+docs/internal/
 
 # Next.js
 /.next/
