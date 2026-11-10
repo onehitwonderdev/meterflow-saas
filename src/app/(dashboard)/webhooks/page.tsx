@@ -48,7 +48,7 @@ const mockEndpoints: WebhookEndpoint[] = [
   {
     id: "we_001",
     url: "https://techcorp.io/webhooks/meterflow",
-    signingSecret: "whsec_abc123def456ghi789jkl012mno345pqr",
+    signingSecret: "demo-signing-secret-endpoint-001",
     subscribedEvents: ["usage.threshold_breached", "invoice.finalized", "customer.blocked"],
     isActive: true,
     createdAt: "2026-01-10T10:00:00Z",
@@ -56,7 +56,7 @@ const mockEndpoints: WebhookEndpoint[] = [
   {
     id: "we_002",
     url: "https://dataflow.io/billing/webhooks",
-    signingSecret: "whsec_xyz789uvw012rst345mno678pqr901stu",
+    signingSecret: "demo-signing-secret-endpoint-002",
     subscribedEvents: ["invoice.finalized", "invoice.paid", "customer.created"],
     isActive: true,
     createdAt: "2026-01-12T14:30:00Z",
@@ -64,7 +64,7 @@ const mockEndpoints: WebhookEndpoint[] = [
   {
     id: "we_003",
     url: "https://internal.company.com/meterflow-events",
-    signingSecret: "whsec_mno345pqr678stu901vwx234yz567abc",
+    signingSecret: "demo-signing-secret-endpoint-003",
     subscribedEvents: ["usage.threshold_breached", "customer.blocked"],
     isActive: false,
     createdAt: "2026-01-15T09:15:00Z",
